@@ -127,3 +127,10 @@
   @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
   .hero-text { animation: fadeUp 0.7s ease 0.05s both; }
   .hero-visual { animation: fadeUp 0.7s ease 0.2s both; }
+
+  .company-logo {
+  width: 120px;
+  height: auto;
+  margin-bottom: 1rem;
+  display: block;
+}
