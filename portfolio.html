@@ -355,6 +355,12 @@
             <span class="cl-icon"><i class="fa-solid fa-phone"></i></span>
             +49 151 4680 1615
           </a>
+
+          <a href="https://calendar.google.com/appointments/schedules/AcZssZ2N0StPy_Zll9SLNOA8ZnaqWN3SblYVTnKV3dS8fSvBN3ahjsrYHEvXibX1IdKxyCmloUs6fSeq"
+            class="contact-link meeting-link" data-meeting-open>
+            <span class="cl-icon"><i class="fa-brands fa-google"></i></span>
+            Schedule a Google Meet
+          </a>
         </div>
         <div class="lang-row">
           <span class="lang-pill">English — Business Fluent</span>
@@ -372,6 +378,23 @@
     <div class="footer-logo">PashyamiSoul — Amith Rajolkar</div>
     <div class="footer-copy">© 2026 · Berlin, Germany</div>
   </footer>
+
+  <div class="meeting-modal" id="meeting-modal" aria-hidden="true">
+    <div class="meeting-backdrop" data-meeting-close></div>
+    <div class="meeting-dialog" role="dialog" aria-modal="true" aria-labelledby="meeting-title">
+      <h3 id="meeting-title" class="sr-only">Schedule a Google Meet</h3>
+      <button type="button" class="meeting-close" data-meeting-close aria-label="Close meeting scheduler">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <iframe
+        class="meeting-frame"
+        src="https://calendar.google.com/appointments/schedules/AcZssZ2N0StPy_Zll9SLNOA8ZnaqWN3SblYVTnKV3dS8fSvBN3ahjsrYHEvXibX1IdKxyCmloUs6fSeq"
+        title="Schedule a Google Meet with Amith Rajolkar">
+      </iframe>
+    </div>
+  </div>
+
+  <script src="js/meeting-modal.js"></script>
 
 </body>
 
