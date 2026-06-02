@@ -1,0 +1,47 @@
+name: Uptime Monitor
+
+on:
+  schedule:
+    - cron: '0 * * * *'
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check site status
+        id: check
+        run: |
+          URL="https://pashyamisoul-site.vercel.app"
+          START=$(date +%s%3N)
+          CODE=$(curl -s -o /dev/null -w "%{http_code}" -m 30 "$URL" || echo "000")
+          END=$(date +%s%3N)
+          MS=$((END - START))
+          echo "code=$CODE" >> "$GITHUB_OUTPUT"
+          echo "ms=$MS" >> "$GITHUB_OUTPUT"
+          echo "time=$(date -u '+%Y-%m-%d %H:%M UTC')" >> "$GITHUB_OUTPUT"
+          if [ "$CODE" = "200" ]; then
+            echo "status=UP" >> "$GITHUB_OUTPUT"
+          else
+            echo "status=DOWN" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Send email report
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 465
+          secure: true
+          username: ${{ secrets.MAIL_USERNAME }}
+          password: ${{ secrets.MAIL_PASSWORD }}
+          subject: "[${{ steps.check.outputs.status }}] pashyamisoul-site hourly report"
+          to: amith.reddy.56@gmail.com
+          from: Uptime Monitor <${{ secrets.MAIL_USERNAME }}>
+          body: |
+            Hourly uptime report for pashyamisoul-site
+            -------------------------------------------
+            Site:          https://pashyamisoul-site.vercel.app
+            Status:        ${{ steps.check.outputs.status }}
+            HTTP code:     ${{ steps.check.outputs.code }}
+            Response time: ${{ steps.check.outputs.ms }} ms
+            Checked at:    ${{ steps.check.outputs.time }}
