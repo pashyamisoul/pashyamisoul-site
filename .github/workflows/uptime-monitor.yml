@@ -26,7 +26,8 @@ jobs:
             echo "status=DOWN" >> "$GITHUB_OUTPUT"
           fi
 
-      - name: Send email report
+      - name: Send email alert (only when DOWN)
+        if: steps.check.outputs.status == 'DOWN'
         uses: dawidd6/action-send-mail@v3
         with:
           server_address: smtp.gmail.com
@@ -34,14 +35,17 @@ jobs:
           secure: true
           username: ${{ secrets.MAIL_USERNAME }}
           password: ${{ secrets.MAIL_PASSWORD }}
-          subject: "[${{ steps.check.outputs.status }}] pashyamisoul-site hourly report"
+          subject: "[DOWN] pashyamisoul-site is not responding"
           to: amith.reddy.56@gmail.com
           from: Uptime Monitor <${{ secrets.MAIL_USERNAME }}>
           body: |
-            Hourly uptime report for pashyamisoul-site
+            ALERT: pashyamisoul-site is DOWN
             -------------------------------------------
             Site:          https://pashyamisoul-site.vercel.app
             Status:        ${{ steps.check.outputs.status }}
             HTTP code:     ${{ steps.check.outputs.code }}
             Response time: ${{ steps.check.outputs.ms }} ms
             Checked at:    ${{ steps.check.outputs.time }}
+
+            The site did not return HTTP 200. It may be down,
+            misconfigured, or a deployment may have failed.
