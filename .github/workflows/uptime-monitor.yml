@@ -36,7 +36,7 @@ jobs:
           username: ${{ secrets.MAIL_USERNAME }}
           password: ${{ secrets.MAIL_PASSWORD }}
           subject: "[DOWN] pashyamisoul-site is not responding"
-          to: amith.reddy.56@gmail.com
+          to: ${{ secrets.ALERT_EMAIL }}
           from: Uptime Monitor <${{ secrets.MAIL_USERNAME }}>
           body: |
             ALERT: pashyamisoul-site is DOWN

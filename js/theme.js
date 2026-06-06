@@ -44,3 +44,14 @@ if (themeToggle) {
     applyTheme(document.body.classList.contains("dark-mode") ? "light" : "dark");
   });
 }
+
+document.querySelectorAll("[data-email-link]").forEach((link) => {
+  link.addEventListener("click", (event) => {
+    event.preventDefault();
+
+    const mailbox = `${link.dataset.mailA}.${link.dataset.mailB}`;
+    const domain = `${link.dataset.mailC}.${link.dataset.mailD}`;
+
+    window.location.href = `mailto:${mailbox}@${domain}`;
+  });
+});

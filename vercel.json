@@ -1,0 +1,11 @@
+{
+  "routes": [
+    {
+      "src": "/resume/Amith-Rajolkar-Resume.pdf",
+      "dest": "/api/cv"
+    },
+    {
+      "handle": "filesystem"
+    }
+  ]
+}
