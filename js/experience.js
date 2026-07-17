@@ -3,7 +3,7 @@
    - Each role's marker pops, card + bullets rise and stagger in
    - Headline metrics count up on first view
    - Fully degrades: with reduced-motion or if GSAP fails to load, everything
-     is shown immediately (content is visible by default — never hidden by CSS) */
+     is shown immediately (content is visible by default, never hidden by CSS) */
 (function () {
   'use strict';
 
@@ -22,7 +22,7 @@
   }
 
   // The spine should run from the first marker's centre to the last marker's
-  // centre — never past the last dot. Card heights vary, so measure in JS.
+  // centre, never past the last dot. Card heights vary, so measure in JS.
   function sizeSpine() {
     var timeline = document.getElementById('experience-timeline');
     var spine = timeline && timeline.querySelector('.tl-spine');
@@ -38,10 +38,32 @@
     spine.style.height = Math.max(0, lastCenter - firstCenter) + 'px';
   }
 
+  // Inject the inline Intune logo tile and wire up the expandable project rows.
+  function setupProjects() {
+    var INTUNE = '<svg viewBox="0 0 48 48" width="22" height="22"><rect width="48" height="48" rx="11" fill="#0F52BA"/><rect x="12" y="13" width="24" height="17" rx="2" fill="#fff"/><rect x="21" y="30" width="6" height="3" fill="#fff"/><rect x="16" y="33" width="16" height="2.5" rx="1.25" fill="#fff"/><path d="M17 21.5 l4 4 l9-10" stroke="#0F52BA" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+    Array.prototype.forEach.call(document.querySelectorAll('.lg-intune'), function (el) { el.innerHTML = INTUNE; });
+
+    // expandable project rows - one open at a time within each role's list
+    Array.prototype.forEach.call(document.querySelectorAll('.rp-list'), function (list) {
+      var items = Array.prototype.slice.call(list.querySelectorAll('.rp-item'));
+      items.forEach(function (item) {
+        var head = item.querySelector('.rp-head');
+        if (!head) return;
+        head.addEventListener('click', function () {
+          var willOpen = !item.classList.contains('open');
+          items.forEach(function (o) { o.classList.remove('open'); o.querySelector('.rp-head').setAttribute('aria-expanded', 'false'); });
+          if (willOpen) { item.classList.add('open'); head.setAttribute('aria-expanded', 'true'); }
+          if (typeof ScrollTrigger !== 'undefined') { ScrollTrigger.refresh(); }
+        });
+      });
+    });
+  }
+
   function init() {
     var progress = document.getElementById('tlProgress');
     var counts = document.querySelectorAll('.tl-metric-num.count');
 
+    setupProjects();
     sizeSpine();
     window.addEventListener('load', sizeSpine);
     var rt;
@@ -75,7 +97,7 @@
     gsap.utils.toArray('.tl-item').forEach(function (item) {
       var marker = item.querySelector('.tl-marker');
       var card = item.querySelector('.tl-card');
-      var bullets = item.querySelectorAll('.tl-bullets li');
+      var bullets = item.querySelectorAll('.tl-bullets li, .rp-item');
       var itemCounts = item.querySelectorAll('.count');
 
       var tl = gsap.timeline({

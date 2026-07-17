@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PashyamiSoul — Amith Rajolkar</title>
+  <title>PashyamiSoul · Amith Rajolkar</title>
   <link
     href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=DM+Sans:wght@300;400;500&display=swap"
     rel="stylesheet">
@@ -81,7 +81,7 @@
     <div class="section-tag">About Me</div>
     <h2 class="section-title">IT Engineer with a <em>bias for<br>automation</em> & reliability</h2>
     <p class="summary-text">
-      I'm Amith — a Senior IT Support Engineer currently at Babbel GmbH in Berlin, specialising in Endpoint Management,
+      I'm Amith, a Senior IT Support Engineer currently at Babbel GmbH in Berlin, specialising in Endpoint Management,
       Identity & Access, and ITSM. With over 8 years in the field across India and Germany, I've built a track record of
       delivering zero-downtime operations, leading large-scale migrations, and building self-service systems that
       genuinely reduce ticket volume.
@@ -89,7 +89,7 @@
     <p class="summary-text">
       I combine deep technical expertise in Okta, Microsoft Intune, and ServiceNow with a strong instinct for process
       improvement and automation. Whether it's deploying MFA company-wide or migrating 6,000 endpoints with minimal
-      disruption — I get it done.
+      disruption, I get it done.
     </p>
     <div class="core-pills">
       <span class="core-pill">L1–L3 Support</span>
@@ -112,30 +112,85 @@
     <div class="timeline" id="experience-timeline">
       <div class="tl-spine"><div class="tl-progress" id="tlProgress"></div></div>
 
-      <!-- Babbel — current -->
+      <!-- Babbel - current -->
       <div class="tl-item current">
         <div class="tl-marker">
           <a href="https://www.babbel.com" target="_blank" rel="noopener"><img src="images/babbel.png" alt="Babbel"></a>
         </div>
         <div class="tl-card">
-          <div class="tl-topline">
-            <span class="tl-date">Nov 2023 — Present</span>
-            <span class="tl-current-badge">Current</span>
+          <div class="tl-main">
+            <div class="tl-topline">
+              <span class="tl-date">Nov 2023 – Present</span>
+              <span class="tl-current-badge">Current</span>
+            </div>
+            <div class="tl-company">Babbel GmbH · Berlin</div>
+            <div class="tl-title">Internal IT Engineer</div>
+            <div class="tl-metrics">
+              <div><span class="tl-metric-num count" data-target="500" data-suffix="+">0</span><span class="tl-metric-lbl">Users owned</span></div>
+              <div><span class="tl-metric-num count" data-target="50" data-suffix="/wk">0</span><span class="tl-metric-lbl">Tickets in SLA</span></div>
+              <div><span class="tl-metric-num count" data-target="80" data-suffix="">0</span><span class="tl-metric-lbl">Intune endpoints</span></div>
+            </div>
+            <ul class="tl-bullets">
+              <li>Own L2/L3 helpdesk for 500+ users across macOS and Windows within SLA</li>
+              <li>Automated identity lifecycle in Okta &amp; Terraform (SSO, SCIM, MFA)</li>
+              <li>Championed company-wide adaptive MFA, ending password-only authentication</li>
+              <li>Built the IT knowledge base and runbooks that cut repeat ticket volume</li>
+            </ul>
           </div>
-          <div class="tl-company">Babbel GmbH · Berlin</div>
-          <div class="tl-title">Internal IT Engineer</div>
-          <div class="tl-metrics">
-            <div><span class="tl-metric-num count" data-target="500" data-suffix="+">0</span><span class="tl-metric-lbl">Users owned</span></div>
-            <div><span class="tl-metric-num count" data-target="50" data-suffix="/wk">0</span><span class="tl-metric-lbl">Tickets in SLA</span></div>
-            <div><span class="tl-metric-num count" data-target="80" data-suffix="">0</span><span class="tl-metric-lbl">Intune endpoints</span></div>
+          <div class="tl-projects">
+            <div class="rp-label">Key projects <span class="rp-count">· 7</span><span class="rp-hint">· click to expand</span></div>
+            <ul class="rp-list">
+              <li class="rp-item">
+                <button type="button" class="rp-head" aria-expanded="false"><span class="rp-logos"><img src="images/logos/okta.svg" alt=""><img src="images/logos/datadog.svg" alt=""></span><span class="rp-meta"><span class="rp-title">Datadog SCIM provisioning</span><span class="rp-sub">~500-user cutover · Terraform↔SCIM fix</span></span><i class="fa-solid fa-chevron-down rp-chev"></i></button>
+                <div class="rp-detail"><div class="rp-detail-in"><div class="rp-d-pad">
+                  <p class="rp-exp">Built end-to-end SCIM provisioning in Okta and ran the ~500-user cutover, resolving a Terraform↔SCIM lifecycle collision so infrastructure-as-code and live provisioning stopped overwriting each other. Datadog's user lifecycle is now fully automated and managed as code. <span class="rp-jira">(ISP-615/617)</span></p>
+                  <div class="rp-chips"><span class="rp-chip">Okta</span><span class="rp-chip">SCIM</span><span class="rp-chip">Terraform</span><span class="rp-chip">Datadog</span></div>
+                </div></div></div>
+              </li>
+              <li class="rp-item">
+                <button type="button" class="rp-head" aria-expanded="false"><span class="rp-logos"><img src="images/logos/okta.svg" alt=""><img src="images/logos/terraform.svg" alt=""></span><span class="rp-meta"><span class="rp-title">Astronomer SSO &amp; SCIM</span><span class="rp-sub">SAML · raw okta_app_saml import</span></span><i class="fa-solid fa-chevron-down rp-chev"></i></button>
+                <div class="rp-detail"><div class="rp-detail-in"><div class="rp-d-pad">
+                  <p class="rp-exp">Set up SAML SSO and SCIM, then imported the app into Terraform via a raw <code>okta_app_saml</code> resource with a lifecycle-ignore block, making the whole configuration repeatable and version-controlled. <span class="rp-jira">(ISP-629)</span></p>
+                  <div class="rp-chips"><span class="rp-chip">Okta</span><span class="rp-chip">SAML</span><span class="rp-chip">SCIM</span><span class="rp-chip">Terraform</span></div>
+                </div></div></div>
+              </li>
+              <li class="rp-item">
+                <button type="button" class="rp-head" aria-expanded="false"><span class="rp-logos"><img src="images/logos/okta.svg" alt=""><img src="images/logos/claude.svg" alt=""></span><span class="rp-meta"><span class="rp-title">Okta JWT for AI agent gateway</span><span class="rp-sub">AWS Bedrock MCP · Claude Code</span></span><i class="fa-solid fa-chevron-down rp-chev"></i></button>
+                <div class="rp-detail"><div class="rp-detail-in"><div class="rp-d-pad">
+                  <p class="rp-exp">Stood up a custom Okta authorization server (scopes + claims) and an OIDC app issuing JWTs, giving InfoSec's AWS Bedrock AgentCore MCP gateway a scoped, least-privilege identity layer for Claude Code. <span class="rp-jira">(SEC-2797)</span></p>
+                  <div class="rp-chips"><span class="rp-chip">Okta</span><span class="rp-chip">OIDC / JWT</span><span class="rp-chip">AWS Bedrock</span><span class="rp-chip">Claude Code</span></div>
+                </div></div></div>
+              </li>
+              <li class="rp-item">
+                <button type="button" class="rp-head" aria-expanded="false"><span class="rp-logos"><img src="images/logos/claude.svg" alt=""><span class="lg-shield"><i class="fa-solid fa-shield-halved"></i></span></span><span class="rp-meta"><span class="rp-title">Blocked AI remote-control tooling</span><span class="rp-sub">MDM: SimpleMDM (Mac) · Intune (Win)</span></span><i class="fa-solid fa-chevron-down rp-chev"></i></button>
+                <div class="rp-detail"><div class="rp-detail-in"><div class="rp-d-pad">
+                  <p class="rp-exp">Partnered with InfoSec to enforce MDM configurations that block AI agent “computer-use” remote-control tooling: SimpleMDM on macOS and Intune on Windows, closing that remote-access attack surface across the managed fleet.</p>
+                  <div class="rp-chips"><span class="rp-chip">SimpleMDM</span><span class="rp-chip">Intune</span><span class="rp-chip">macOS + Windows</span><span class="rp-chip">InfoSec</span></div>
+                </div></div></div>
+              </li>
+              <li class="rp-item">
+                <button type="button" class="rp-head" aria-expanded="false"><span class="rp-logos"><span class="lg-cs"><i class="fa-solid fa-crow"></i></span><span class="lg-fa"><i class="fa-brands fa-windows" style="color:#0078D4"></i></span></span><span class="rp-meta"><span class="rp-title">CrowdStrike Falcon fleet fix</span><span class="rp-sub">3 root causes · 0x800704D0</span></span><i class="fa-solid fa-chevron-down rp-chev"></i></button>
+                <div class="rp-detail"><div class="rp-detail-in"><div class="rp-d-pad">
+                  <p class="rp-exp">Diagnosed three stacked root causes behind a fleet-wide Falcon deployment failure (0x800704D0): a misnamed installer EXE, a missing DigiCert TLS root certificate, and an unsupported sensor version, then upgraded the sensor 7.21 → 7.38 to restore EDR coverage across Windows.</p>
+                  <div class="rp-chips"><span class="rp-chip">CrowdStrike Falcon</span><span class="rp-chip">Windows</span><span class="rp-chip">TLS / PKI</span></div>
+                </div></div></div>
+              </li>
+              <li class="rp-item">
+                <button type="button" class="rp-head" aria-expanded="false"><span class="rp-logos"><span class="lg-intune"></span><img src="images/logos/android.svg" alt=""></span><span class="rp-meta"><span class="rp-title">Android MDM, fleet-wide</span><span class="rp-sub">Intune · enrollment &amp; compliance</span></span><i class="fa-solid fa-chevron-down rp-chev"></i></button>
+                <div class="rp-detail"><div class="rp-detail-in"><div class="rp-d-pad">
+                  <p class="rp-exp">Built a Microsoft Intune MDM solution for the entire Android fleet: automated enrollment, security &amp; compliance policy, and app management from one console, bringing every device under a single enforceable baseline.</p>
+                  <div class="rp-chips"><span class="rp-chip">Microsoft Intune</span><span class="rp-chip">Android Enterprise</span><span class="rp-chip">Compliance</span></div>
+                </div></div></div>
+              </li>
+              <li class="rp-item">
+                <button type="button" class="rp-head" aria-expanded="false"><span class="rp-logos"><span class="lg-intune"></span><span class="lg-fa"><i class="fa-brands fa-windows" style="color:#0078D4"></i></span></span><span class="rp-meta"><span class="rp-title">Autopilot &amp; LAPS recovery</span><span class="rp-sub">0x80070534 · device rescue</span></span><i class="fa-solid fa-chevron-down rp-chev"></i></button>
+                <div class="rp-detail"><div class="rp-detail-in"><div class="rp-d-pad">
+                  <p class="rp-exp">Fixed a Windows Autopilot / Intune enrollment failure (0x80070534, <code>LocalUsersAndGroups</code>) and recovered a device stranded as “deleted” in Intune by regaining local admin access via LAPS, restoring reliable zero-touch enrollment.</p>
+                  <div class="rp-chips"><span class="rp-chip">Intune</span><span class="rp-chip">Windows Autopilot</span><span class="rp-chip">LAPS</span></div>
+                </div></div></div>
+              </li>
+            </ul>
           </div>
-          <ul class="tl-bullets">
-            <li>Own L2/L3 helpdesk for 500+ users across macOS and Windows, resolving 40–60 tickets per week within SLA</li>
-            <li>Deployed Microsoft Intune across 80 Windows endpoints with Zero-Touch provisioning — cutting device setup time by ~60%</li>
-            <li>Championed company-wide adaptive MFA rollout in Okta, eliminating password-only authentication</li>
-            <li>Administered identity lifecycle — Okta SSO/MFA, Google Workspace, Jira, Confluence, Slack</li>
-            <li>Built the IT knowledge base and runbooks driving a measurable reduction in repeat ticket volume</li>
-          </ul>
         </div>
       </div>
 
@@ -145,14 +200,27 @@
           <a href="https://everphone.com/en/" target="_blank" rel="noopener"><img src="images/everphone.png" alt="Everphone"></a>
         </div>
         <div class="tl-card">
-          <div class="tl-topline"><span class="tl-date">Jul 2023 — Nov 2023</span></div>
-          <div class="tl-company">Everphone GmbH · Berlin</div>
-          <div class="tl-title">IT Engineer (Freelancer)</div>
-          <ul class="tl-bullets">
-            <li>Stood up Freshservice ITSM from scratch — ticket tracking, SLA dashboards, and escalation workflows</li>
-            <li>Provided L1/L2 support for distributed international teams across hardware, software, and SaaS issues</li>
-            <li>Managed end-to-end IT asset lifecycle — procurement, provisioning, compliance, and decommission</li>
-          </ul>
+          <div class="tl-main">
+            <div class="tl-topline"><span class="tl-date">Jul 2023 – Nov 2023</span></div>
+            <div class="tl-company">Everphone GmbH · Berlin</div>
+            <div class="tl-title">IT Engineer (Freelancer)</div>
+            <ul class="tl-bullets">
+              <li>Provided L1/L2 support for distributed international teams across hardware, software, and SaaS issues</li>
+              <li>Managed end-to-end IT asset lifecycle: procurement, provisioning, compliance, and decommission</li>
+            </ul>
+          </div>
+          <div class="tl-projects">
+            <div class="rp-label">Key project</div>
+            <ul class="rp-list">
+              <li class="rp-item">
+                <button type="button" class="rp-head" aria-expanded="false"><span class="rp-logos"><span class="lg-fa" style="color:#25c16f"><i class="fa-solid fa-headset"></i></span></span><span class="rp-meta"><span class="rp-title">Freshservice ITSM, from scratch</span><span class="rp-sub">Ticketing · SLA dashboards · escalations</span></span><i class="fa-solid fa-chevron-down rp-chev"></i></button>
+                <div class="rp-detail"><div class="rp-detail-in"><div class="rp-d-pad">
+                  <p class="rp-exp">Stood up the Freshservice ITSM platform from scratch: ticket tracking, SLA dashboards, and escalation workflows, giving the organization a structured, measurable support operation.</p>
+                  <div class="rp-chips"><span class="rp-chip">Freshservice</span><span class="rp-chip">ITSM</span><span class="rp-chip">SLA</span></div>
+                </div></div></div>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
 
@@ -162,35 +230,61 @@
           <a href="https://www.wayfair.com" target="_blank" rel="noopener"><img src="images/Wayfair.png" alt="Wayfair"></a>
         </div>
         <div class="tl-card">
-          <div class="tl-topline"><span class="tl-date">Aug 2020 — Jun 2023</span></div>
-          <div class="tl-company">Wayfair GmbH · Berlin</div>
-          <div class="tl-title">Service Engineer II — Employee Tech</div>
-          <div class="tl-metrics">
-            <div><span class="tl-metric-num count" data-target="6000" data-suffix="+">0</span><span class="tl-metric-lbl">Endpoints migrated</span></div>
-            <div><span class="tl-metric-num count" data-target="3" data-suffix="yrs">0</span><span class="tl-metric-lbl">Tenure</span></div>
+          <div class="tl-main">
+            <div class="tl-topline"><span class="tl-date">Aug 2020 – Jun 2023</span></div>
+            <div class="tl-company">Wayfair GmbH · Berlin</div>
+            <div class="tl-title">Service Engineer II · Employee Tech</div>
+            <div class="tl-metrics">
+              <div><span class="tl-metric-num count" data-target="6000" data-suffix="+">0</span><span class="tl-metric-lbl">Endpoints migrated</span></div>
+              <div><span class="tl-metric-num count" data-target="3" data-suffix="yrs">0</span><span class="tl-metric-lbl">Tenure</span></div>
+            </div>
+            <ul class="tl-bullets">
+              <li>Handled high-volume L1–L3 helpdesk across a global SaaS environment within SLA</li>
+              <li>Administered ServiceNow and led ITSM process improvements across the team</li>
+            </ul>
           </div>
-          <ul class="tl-bullets">
-            <li>Architected and executed migration of 6,000+ endpoints from SCCM to Microsoft Intune at global scale</li>
-            <li>Handled high-volume L1–L3 helpdesk across a global SaaS environment within SLA</li>
-            <li>Administered ServiceNow and led ITSM process improvements, reducing manual effort across the team</li>
-            <li>Partnered with cross-functional engineering and ops teams on complex infrastructure issues</li>
-          </ul>
+          <div class="tl-projects">
+            <div class="rp-label">Key project</div>
+            <ul class="rp-list">
+              <li class="rp-item">
+                <button type="button" class="rp-head" aria-expanded="false"><span class="rp-logos"><span class="lg-fa" style="color:#737373"><i class="fa-solid fa-server"></i></span><span class="lg-intune"></span></span><span class="rp-meta"><span class="rp-title">SCCM → Intune migration</span><span class="rp-sub">6,000+ endpoints · global scale</span></span><i class="fa-solid fa-chevron-down rp-chev"></i></button>
+                <div class="rp-detail"><div class="rp-detail-in"><div class="rp-d-pad">
+                  <p class="rp-exp">Architected and executed the migration of 6,000+ endpoints from SCCM to Microsoft Intune at global scale, modernizing and automating endpoint management and improving security posture.</p>
+                  <div class="rp-chips"><span class="rp-chip">SCCM</span><span class="rp-chip">Microsoft Intune</span><span class="rp-chip">Windows</span></div>
+                </div></div></div>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
 
-      <!-- Babbel — Junior -->
+      <!-- Babbel - Junior -->
       <div class="tl-item">
         <div class="tl-marker">
           <a href="https://www.babbel.com" target="_blank" rel="noopener"><img src="images/babbel.png" alt="Babbel"></a>
         </div>
         <div class="tl-card">
-          <div class="tl-topline"><span class="tl-date">Aug 2019 — Dec 2019</span></div>
-          <div class="tl-company">Babbel GmbH · Berlin</div>
-          <div class="tl-title">Junior IT Engineer</div>
-          <ul class="tl-bullets">
-            <li>Delivered L1 helpdesk covering hardware, software, and network access for a rapidly scaling Berlin team</li>
-            <li>Accelerated employee onboarding/offboarding through structured access management workflows</li>
-          </ul>
+          <div class="tl-main">
+            <div class="tl-topline"><span class="tl-date">Aug 2019 – Dec 2019</span></div>
+            <div class="tl-company">Babbel GmbH · Berlin</div>
+            <div class="tl-title">Junior IT Engineer</div>
+            <ul class="tl-bullets">
+              <li>Delivered L1 helpdesk covering hardware, software, and network access</li>
+              <li>Supported onboarding/offboarding and access management across internal systems</li>
+            </ul>
+          </div>
+          <div class="tl-projects">
+            <div class="rp-label">Key project</div>
+            <ul class="rp-list">
+              <li class="rp-item">
+                <button type="button" class="rp-head" aria-expanded="false"><span class="rp-logos"><span class="lg-fa" style="color:var(--accent)"><i class="fa-solid fa-user-gear"></i></span></span><span class="rp-meta"><span class="rp-title">Onboarding/offboarding workflow</span><span class="rp-sub">Structured access management</span></span><i class="fa-solid fa-chevron-down rp-chev"></i></button>
+                <div class="rp-detail"><div class="rp-detail-in"><div class="rp-d-pad">
+                  <p class="rp-exp">Built structured access-management workflows for employee onboarding and offboarding, speeding up provisioning and reducing access gaps for a rapidly scaling Berlin team.</p>
+                  <div class="rp-chips"><span class="rp-chip">Access Management</span><span class="rp-chip">Onboarding</span></div>
+                </div></div></div>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
 
@@ -200,13 +294,27 @@
           <a href="https://www.infosys.com" target="_blank" rel="noopener"><img src="images/Infosys.png" alt="Infosys"></a>
         </div>
         <div class="tl-card">
-          <div class="tl-topline"><span class="tl-date">Oct 2016 — Feb 2019</span></div>
-          <div class="tl-company">Infosys · Client: British Telecom</div>
-          <div class="tl-title">Senior Process Executive</div>
-          <ul class="tl-bullets">
-            <li>Resolved network access and credential incidents for enterprise BT users, maintaining SLA compliance</li>
-            <li>Delivered remote troubleshooting across enterprise systems, consistently meeting KPI targets</li>
-          </ul>
+          <div class="tl-main">
+            <div class="tl-topline"><span class="tl-date">Oct 2016 – Feb 2019</span></div>
+            <div class="tl-company">Infosys · Client: British Telecom</div>
+            <div class="tl-title">Senior Process Executive</div>
+            <ul class="tl-bullets">
+              <li>Resolved network access and credential incidents for enterprise BT users, maintaining SLA compliance</li>
+              <li>Delivered remote troubleshooting across enterprise systems, consistently meeting KPI targets</li>
+            </ul>
+          </div>
+          <div class="tl-projects">
+            <div class="rp-label">Key project</div>
+            <ul class="rp-list">
+              <li class="rp-item">
+                <button type="button" class="rp-head" aria-expanded="false"><span class="rp-logos"><span class="lg-fa" style="color:#737373"><i class="fa-solid fa-network-wired"></i></span></span><span class="rp-meta"><span class="rp-title">Enterprise incident support</span><span class="rp-sub">British Telecom · network &amp; credentials</span></span><i class="fa-solid fa-chevron-down rp-chev"></i></button>
+                <div class="rp-detail"><div class="rp-detail-in"><div class="rp-d-pad">
+                  <p class="rp-exp">Resolved network-access and credential incidents and delivered remote troubleshooting for enterprise British Telecom users, consistently meeting SLA and KPI targets in a high-volume queue.</p>
+                  <div class="rp-chips"><span class="rp-chip">Enterprise Support</span><span class="rp-chip">SLA / KPI</span></div>
+                </div></div></div>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
@@ -292,7 +400,7 @@
       <div>
         <div class="edu-item">
           <div class="edu-label">Postgraduate</div>
-          <div class="edu-degree">MSc Computer Science — Cyber Security</div>
+          <div class="edu-degree">MSc Computer Science · Cyber Security</div>
           <div class="edu-school">SRH Hochschule Berlin</div>
           <div class="edu-year">2019 – 2022 · Berlin, Germany</div>
         </div>
@@ -353,19 +461,19 @@
           </a>
         </div>
         <div class="lang-row">
-          <span class="lang-pill">English — Business Fluent</span>
-          <span class="lang-pill">German — Intermediate</span>
+          <span class="lang-pill">English · Business Fluent</span>
+          <span class="lang-pill">German · Intermediate</span>
         </div>
       </div>
       <div class="soul-quote">
-        <p>Eight years of building, fixing, and improving — one ticket, one system, one endpoint at a time.</p>
-        <cite>— Amith Rajolkar · PashyamiSoul</cite>
+        <p>Eight years of building, fixing, and improving: one ticket, one system, one endpoint at a time.</p>
+        <cite>Amith Rajolkar · PashyamiSoul</cite>
       </div>
     </div>
   </section>
 
   <footer>
-    <div class="footer-logo">PashyamiSoul — Amith Rajolkar</div>
+    <div class="footer-logo">PashyamiSoul · Amith Rajolkar</div>
     <div class="footer-copy">© 2026 · Berlin, Germany</div>
   </footer>
 
