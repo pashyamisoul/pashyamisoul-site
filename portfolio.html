@@ -109,109 +109,102 @@
     <div class="section-tag">Career</div>
     <h2 class="section-title">Professional <em>Experience</em></h2>
 
-    <div class="exp-timeline">
-      <div class="exp-item">
-        <div>
-          <a href="https://www.babbel.com" target="_blank">
-            <img src="images/babbel.png" class="company-logo">
-          </a>
-          <div class="exp-date">Nov 2023 — Present</div>
-          <span class="exp-current">Current</span>
+    <div class="timeline" id="experience-timeline">
+      <div class="tl-spine"><div class="tl-progress" id="tlProgress"></div></div>
 
+      <!-- Babbel — current -->
+      <div class="tl-item current">
+        <div class="tl-marker">
+          <a href="https://www.babbel.com" target="_blank" rel="noopener"><img src="images/babbel.png" alt="Babbel"></a>
         </div>
-        <div>
-
-          <div class="exp-company">Babbel GmbH · Berlin</div>
-          <div class="exp-title">Internal IT Engineer</div>
-          <div class="exp-location">Berlin, Germany</div>
-          <ul class="exp-highlights">
-            <li>Own L2/L3 helpdesk for 500+ users, resolving 40–60 tickets per week within SLA across macOS and Windows
-            </li>
-            <li>Deployed Microsoft Intune across 80 Windows endpoints with Zero-Touch provisioning — cutting device
-              setup time by ~60%</li>
-            <li>Championed company-wide adaptive MFA rollout in Okta, eliminating password-only authentication for all
-              users</li>
+        <div class="tl-card">
+          <div class="tl-topline">
+            <span class="tl-date">Nov 2023 — Present</span>
+            <span class="tl-current-badge">Current</span>
+          </div>
+          <div class="tl-company">Babbel GmbH · Berlin</div>
+          <div class="tl-title">Internal IT Engineer</div>
+          <div class="tl-metrics">
+            <div><span class="tl-metric-num count" data-target="500" data-suffix="+">0</span><span class="tl-metric-lbl">Users owned</span></div>
+            <div><span class="tl-metric-num count" data-target="50" data-suffix="/wk">0</span><span class="tl-metric-lbl">Tickets in SLA</span></div>
+            <div><span class="tl-metric-num count" data-target="80" data-suffix="">0</span><span class="tl-metric-lbl">Intune endpoints</span></div>
+          </div>
+          <ul class="tl-bullets">
+            <li>Own L2/L3 helpdesk for 500+ users across macOS and Windows, resolving 40–60 tickets per week within SLA</li>
+            <li>Deployed Microsoft Intune across 80 Windows endpoints with Zero-Touch provisioning — cutting device setup time by ~60%</li>
+            <li>Championed company-wide adaptive MFA rollout in Okta, eliminating password-only authentication</li>
             <li>Administered identity lifecycle — Okta SSO/MFA, Google Workspace, Jira, Confluence, Slack</li>
-            <li>Built IT knowledge base and runbooks driving measurable reduction in repeat ticket volume</li>
+            <li>Built the IT knowledge base and runbooks driving a measurable reduction in repeat ticket volume</li>
           </ul>
         </div>
       </div>
 
-      <div class="exp-item">
-        <div>
-          <a href="https://everphone.com/en/" target="_blank">
-            <img src="images/everphone.png" class="company-logo">
-          </a>
-          <div class="exp-date">Jul 2023 — Nov 2023</div>
+      <!-- Everphone -->
+      <div class="tl-item">
+        <div class="tl-marker">
+          <a href="https://everphone.com/en/" target="_blank" rel="noopener"><img src="images/everphone.png" alt="Everphone"></a>
         </div>
-        <div>
-          <div class="exp-company">Everphone GmbH · Berlin</div>
-          <div class="exp-title">IT Engineer (Freelancer)</div>
-          <div class="exp-location">Berlin, Germany</div>
-          <ul class="exp-highlights">
-            <li>Stood up Freshservice ITSM platform from scratch with full ticket tracking, SLA dashboards, and
-              escalation workflows</li>
-            <li>Provided L1/L2 support for distributed international teams across hardware, software, and SaaS issues
-            </li>
+        <div class="tl-card">
+          <div class="tl-topline"><span class="tl-date">Jul 2023 — Nov 2023</span></div>
+          <div class="tl-company">Everphone GmbH · Berlin</div>
+          <div class="tl-title">IT Engineer (Freelancer)</div>
+          <ul class="tl-bullets">
+            <li>Stood up Freshservice ITSM from scratch — ticket tracking, SLA dashboards, and escalation workflows</li>
+            <li>Provided L1/L2 support for distributed international teams across hardware, software, and SaaS issues</li>
             <li>Managed end-to-end IT asset lifecycle — procurement, provisioning, compliance, and decommission</li>
           </ul>
         </div>
       </div>
 
-      <div class="exp-item">
-        <div>
-          <a href="https://www.wayfair.com" target="_blank">
-            <img src="images/Wayfair.png" class="company-logo">
-          </a>
-          <div class="exp-date">Aug 2020 — Jun 2023</div>
+      <!-- Wayfair -->
+      <div class="tl-item">
+        <div class="tl-marker">
+          <a href="https://www.wayfair.com" target="_blank" rel="noopener"><img src="images/Wayfair.png" alt="Wayfair"></a>
         </div>
-        <div>
-          <div class="exp-company">Wayfair GmbH · Berlin</div>
-          <div class="exp-title">Service Engineer II — Employee Tech</div>
-          <div class="exp-location">Berlin, Germany</div>
-          <ul class="exp-highlights">
-            <li>Architected and executed migration of 6,000+ endpoints from SCCM to Microsoft Intune at global scale
-            </li>
-            <li>Handled high-volume L1–L3 helpdesk across global SaaS environment within SLA</li>
+        <div class="tl-card">
+          <div class="tl-topline"><span class="tl-date">Aug 2020 — Jun 2023</span></div>
+          <div class="tl-company">Wayfair GmbH · Berlin</div>
+          <div class="tl-title">Service Engineer II — Employee Tech</div>
+          <div class="tl-metrics">
+            <div><span class="tl-metric-num count" data-target="6000" data-suffix="+">0</span><span class="tl-metric-lbl">Endpoints migrated</span></div>
+            <div><span class="tl-metric-num count" data-target="3" data-suffix="yrs">0</span><span class="tl-metric-lbl">Tenure</span></div>
+          </div>
+          <ul class="tl-bullets">
+            <li>Architected and executed migration of 6,000+ endpoints from SCCM to Microsoft Intune at global scale</li>
+            <li>Handled high-volume L1–L3 helpdesk across a global SaaS environment within SLA</li>
             <li>Administered ServiceNow and led ITSM process improvements, reducing manual effort across the team</li>
             <li>Partnered with cross-functional engineering and ops teams on complex infrastructure issues</li>
           </ul>
         </div>
       </div>
 
-      <div class="exp-item">
-        <div>
-          <a href="https://www.babbel.com" target="_blank">
-            <img src="images/babbel.png" class="company-logo">
-          </a>
-          <div class="exp-date">Aug 2019 — Dec 2019</div>
+      <!-- Babbel — Junior -->
+      <div class="tl-item">
+        <div class="tl-marker">
+          <a href="https://www.babbel.com" target="_blank" rel="noopener"><img src="images/babbel.png" alt="Babbel"></a>
         </div>
-        <div>
-          <div class="exp-company">Babbel GmbH · Berlin</div>
-          <div class="exp-title">Junior IT Engineer</div>
-          <div class="exp-location">Berlin, Germany</div>
-          <ul class="exp-highlights">
-            <li>Delivered L1 helpdesk covering hardware, software, and network access for rapidly scaling Berlin
-              engineering team</li>
+        <div class="tl-card">
+          <div class="tl-topline"><span class="tl-date">Aug 2019 — Dec 2019</span></div>
+          <div class="tl-company">Babbel GmbH · Berlin</div>
+          <div class="tl-title">Junior IT Engineer</div>
+          <ul class="tl-bullets">
+            <li>Delivered L1 helpdesk covering hardware, software, and network access for a rapidly scaling Berlin team</li>
             <li>Accelerated employee onboarding/offboarding through structured access management workflows</li>
           </ul>
         </div>
       </div>
 
-      <div class="exp-item">
-        <div>
-          <a href="https://www.infosys.com" target="_blank">
-            <img src="images/Infosys.png" class="company-logo">
-          </a>
-          <div class="exp-date">Oct 2016 — Feb 2019</div>
+      <!-- Infosys -->
+      <div class="tl-item">
+        <div class="tl-marker">
+          <a href="https://www.infosys.com" target="_blank" rel="noopener"><img src="images/Infosys.png" alt="Infosys"></a>
         </div>
-        <div>
-          <div class="exp-company">Infosys · Client: British Telecom</div>
-          <div class="exp-title">Senior Process Executive</div>
-          <div class="exp-location">Bengaluru, India</div>
-          <ul class="exp-highlights">
-            <li>Resolved network access and credential incidents for enterprise BT users, maintaining SLA compliance
-            </li>
+        <div class="tl-card">
+          <div class="tl-topline"><span class="tl-date">Oct 2016 — Feb 2019</span></div>
+          <div class="tl-company">Infosys · Client: British Telecom</div>
+          <div class="tl-title">Senior Process Executive</div>
+          <ul class="tl-bullets">
+            <li>Resolved network access and credential incidents for enterprise BT users, maintaining SLA compliance</li>
             <li>Delivered remote troubleshooting across enterprise systems, consistently meeting KPI targets</li>
           </ul>
         </div>
@@ -392,6 +385,11 @@
   </div>
 
   <script src="js/meeting-modal.js"></script>
+
+  <!-- Animated experience timeline -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="js/experience.js"></script>
 
 </body>
 

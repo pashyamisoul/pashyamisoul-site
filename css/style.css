@@ -115,17 +115,42 @@ body.dark-mode {
   .core-pills { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1.5rem; }
   .core-pill { font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.45rem 1rem; border: 0.5px solid var(--silver); color: var(--ink-muted); }
 
-  .exp-timeline { margin-top: 1rem; }
-  .exp-item { display: grid; grid-template-columns: 160px 1fr; gap: 2rem; padding: 2rem 0; border-bottom: 0.5px solid var(--pearl-dark); }
-  .exp-item:last-child { border-bottom: none; }
-  .exp-date { font-size: 0.86rem; letter-spacing: 0.08em; color: var(--silver); padding-top: 0.2rem; line-height: 1.6; }
-  .exp-current { display: inline-block; font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; padding: 0.25rem 0.7rem; background: var(--accent); color: var(--pearl); margin-top: 0.4rem; }
-  .exp-company { font-size: 0.82rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.35rem; }
-  .exp-title { font-family: var(--font-display); font-size: 1.55rem; font-weight: 300; margin-bottom: 0.35rem; }
-  .exp-location { font-size: 0.9rem; color: var(--silver); margin-bottom: 1rem; }
-  .exp-highlights { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
-  .exp-highlights li { font-size: 1rem; color: var(--ink-muted); line-height: 1.75; padding-left: 1.15rem; position: relative; }
-  .exp-highlights li::before { content: '—'; position: absolute; left: 0; color: var(--accent-light); }
+  /* ---- Animated experience timeline (Meridian) ---- */
+  .timeline { position: relative; padding: 1rem 0 3rem; margin-top: 1rem; }
+  .tl-spine { position: absolute; left: 27px; top: 1rem; bottom: 3rem; width: 2px; background: var(--pearl-dark); }
+  .tl-progress { position: absolute; inset: 0; background: linear-gradient(180deg, var(--accent-light), var(--accent)); transform-origin: top center; }
+
+  .tl-item { position: relative; display: grid; grid-template-columns: 56px 1fr; gap: 2rem; padding-bottom: 3rem; }
+  .tl-item:last-child { padding-bottom: 0; }
+
+  .tl-marker { position: relative; z-index: 2; width: 56px; height: 56px; border-radius: 50%; background: var(--white); border: 0.5px solid var(--pearl-dark); box-shadow: 0 6px 16px var(--shadow-softer); overflow: hidden; }
+  .tl-marker a { display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; }
+  .tl-marker img { width: 40px; height: 40px; object-fit: contain; }
+  .tl-item.current .tl-marker { border-color: var(--accent); box-shadow: 0 0 0 4px rgba(139,115,85,0.12), 0 6px 16px var(--shadow-softer); }
+
+  .tl-card { padding: 1.75rem 2rem; background: var(--white); border: 0.5px solid var(--pearl-dark); position: relative; transition: border-color 0.3s ease; }
+  .tl-card::before { content: ''; position: absolute; left: -8px; top: 24px; width: 14px; height: 14px; background: var(--white); border-left: 0.5px solid var(--pearl-dark); border-bottom: 0.5px solid var(--pearl-dark); transform: rotate(45deg); }
+  .tl-card:hover { border-color: var(--accent-light); }
+
+  .tl-topline { display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 0.35rem; }
+  .tl-date { font-size: 0.8rem; letter-spacing: 0.08em; color: var(--silver); }
+  .tl-current-badge { font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; padding: 0.2rem 0.6rem; background: var(--accent); color: var(--pearl); }
+  .tl-company { font-size: 0.82rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.2rem; }
+  .tl-title { font-family: var(--font-display); font-size: 1.55rem; font-weight: 300; margin-bottom: 0.9rem; }
+
+  .tl-metrics { display: flex; gap: 1.75rem; flex-wrap: wrap; margin-bottom: 1.1rem; padding-bottom: 1.1rem; border-bottom: 0.5px solid var(--pearl-dark); }
+  .tl-metric-num { font-family: var(--font-display); font-size: 1.7rem; font-weight: 300; color: var(--accent); display: block; line-height: 1.1; font-variant-numeric: tabular-nums; }
+  .tl-metric-lbl { font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-muted); }
+
+  .tl-bullets { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+  .tl-bullets li { font-size: 1rem; color: var(--ink-muted); line-height: 1.7; padding-left: 1.15rem; position: relative; }
+  .tl-bullets li::before { content: '—'; position: absolute; left: 0; color: var(--accent-light); }
+
+  /* Dark-mode contrast: give cards a surface that reads above the near-black
+     background, and keep markers light so brand logos stay legible. */
+  body.dark-mode .tl-card, body.dark-mode .tl-card::before { background: #242321; border-color: #37332d; }
+  body.dark-mode .tl-marker { background: #efe9df; border-color: #efe9df; }
+  body.dark-mode .tl-item.current .tl-marker { border-color: var(--accent); }
 
   .skills-section { background: var(--white); }
   .skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
@@ -752,13 +777,16 @@ section {
     grid-template-columns: 1fr;
   }
 
-  .exp-item {
-    grid-template-columns: 1fr;
-    gap: 2rem;
+  .tl-item {
+    gap: 1.25rem;
   }
 
-  .company-logo {
-    max-width: 120px;
+  .tl-card {
+    padding: 1.25rem 1.25rem;
+  }
+
+  .tl-metrics {
+    gap: 1.25rem;
   }
 
   .education-grid {
