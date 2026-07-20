@@ -172,7 +172,6 @@ body.dark-mode {
   .rp-d-pad { padding: 0 0.95rem 0.9rem 3.4rem; }
   .rp-exp { font-size: 0.8rem; color: var(--ink-muted); line-height: 1.55; margin-bottom: 0.55rem; }
   .rp-exp code { font-family: var(--font-body); color: var(--accent); }
-  .rp-jira { color: var(--silver); }
   .rp-chips { display: flex; flex-wrap: wrap; gap: 0.35rem; }
   .rp-chip { font-size: 0.6rem; letter-spacing: 0.06em; text-transform: uppercase; padding: 0.25rem 0.55rem; background: var(--pearl); border: 0.5px solid var(--pearl-dark); color: var(--ink-muted); }
 
