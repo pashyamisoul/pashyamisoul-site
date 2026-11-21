@@ -136,6 +136,25 @@ Implementation notes:
   link), `d1e1307` (Srimanasa demo link), `64c8582` (five-across grid,
   superseded), `48403e5` (BudgetBuddy card and three-column grid).
 
+## Related project: Srimanasa rebuild (2026-11-21)
+
+The Srimanasa card links to a live GitHub Pages demo that was built out
+substantially on 2026-11-21: full business footer with Amith's credit
+line linking back to this portfolio, six finance photos (hero skyline,
+image bands, framed figures), and a site-wide no-em-dash cleanup. That
+project has its own operational handover at HANDOFF.md in
+github.com/pashyamisoul/srimanasa-rebuild; read it before touching that
+repo, especially the rule about mirroring every change into the five
+standalone dist/ theme pages.
+
+Status there in short: srimanasa.in still runs the original agency-built
+site (Vision Digital Ads); Amith emailed them on 2026-11-21 for hosting
+and registrar details to put the rebuild live on the real domain. The
+footer carries bracketed placeholders (business hours, ARN/SEBI, social
+links, Privacy/Terms) waiting on details from the client, Chaya
+Malshetty. If the domain cutover happens, update the Srimanasa card's
+Visit Site link here from the github.io demo to srimanasa.in.
+
 ## Copy style rule
 
 Amith does not want em dashes in any copy, docs, or commit messages
