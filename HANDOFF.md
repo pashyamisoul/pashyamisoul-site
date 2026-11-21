@@ -92,6 +92,35 @@ never "IT Support Engineer". Renamed site-wide in commit `6d1fd22`
 was checked — it contains no "Support Engineer". Keep new copy consistent
 with this.
 
+## Hobby Projects section (2026-11-21)
+
+`portfolio.html` now has a "Hobby Projects" section (`id="projects"`)
+between Education and Contact, plus a "Projects" nav link. Three cards:
+
+| Card | Live link | Repo |
+| --- | --- | --- |
+| Shivani & Aniruddh (wedding site) | https://shivani-aniruddh-wedding.vercel.app | private |
+| Akshay & Aishwarya (wedding site) | https://akshayaishwaryawedding.vercel.app | private |
+| TailorBack (ATS resume/cover-letter builder) | https://tailorback.com | github.com/pashyamisoul/tailorback |
+
+Implementation notes:
+
+- Card markup uses new CSS classes in `css/style.css`: `.projects-grid`,
+  `.project-card`, `.project-type`, `.project-name`, `.project-desc`,
+  `.project-links`; tag pills reuse the existing `.core-pill`.
+- Colors come from CSS variables, so the cards theme correctly in dark
+  mode with no extra rules.
+- Adding a sixth nav link made the menu overlap the logo at tablet
+  widths; a media query (769px to 1120px) tightens nav padding and lets
+  the links wrap. Keep it in mind if more nav items are added.
+- Relevant commits: `57d1e12` (section), `a3e316b` (TailorBack live link).
+
+## Copy style rule
+
+Amith does not want em dashes in any copy, docs, or commit messages
+written for him. Use commas, colons, or periods instead. (This file
+predates the rule in places; new text must follow it.)
+
 ## Local development
 
 No tooling required. Serve statically from the repo root, e.g.:
