@@ -103,7 +103,13 @@ between Education and Contact, plus a "Projects" nav link. Three cards:
 | Akshay & Aishwarya (wedding site) | https://akshayaishwaryawedding.vercel.app | private |
 | TailorBack (ATS resume/cover-letter builder) | https://tailorback.com | github.com/pashyamisoul/tailorback |
 | FirstLink (laptop store, Bengaluru) | https://firstlink.in | github.com/pashyamisoul/firstlink-website |
-| Srimanasa (financial services rebuild) | https://srimanasa.in | github.com/pashyamisoul/srimanasa-rebuild |
+| Srimanasa (financial services rebuild) | not deployed yet; srimanasa.in still runs the original site, so the card links to GitHub only | github.com/pashyamisoul/srimanasa-rebuild |
+
+FirstLink and Srimanasa were added on 2026-11-21 after a scan of the
+pashyamisoul GitHub account. Other public repos (keyfob-kiosk, the
+Google Calendar guidelines add-on) were considered and left off the
+site for now. If the Srimanasa rebuild gets deployed (GitHub Pages or
+Vercel), add a Visit Site link back to its card.
 
 Implementation notes:
 
