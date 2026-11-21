@@ -104,6 +104,7 @@ between Education and Contact, plus a "Projects" nav link. Three cards:
 | TailorBack (ATS resume/cover-letter builder) | https://tailorback.com | github.com/pashyamisoul/tailorback |
 | FirstLink (laptop store, Bengaluru) | https://firstlink.in | github.com/pashyamisoul/firstlink-website |
 | Srimanasa (financial services rebuild) | https://pashyamisoul.github.io/srimanasa-rebuild/ (GitHub Pages demo; srimanasa.in still runs the original site) | github.com/pashyamisoul/srimanasa-rebuild |
+| BudgetBuddy (SwiftUI iPhone expense tracker) | none; card shows a "Personal Build" note instead of links | github.com/pashyamisoul/BudgetBuddy (private) |
 
 FirstLink and Srimanasa were added on 2026-11-21 after a scan of the
 pashyamisoul GitHub account. Other public repos (keyfob-kiosk, the
