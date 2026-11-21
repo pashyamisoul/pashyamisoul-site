@@ -67,6 +67,31 @@ background the mark sits on.
 Relevant commits: `dbc3db0` (nav logo, favicon, SVG assets), `964cc95`
 (footer mark).
 
+## Analytics & traffic (checked 2026-10-16)
+
+- **Vercel Web Analytics is enabled** on the project. There is no analytics
+  snippet in the repo code — Vercel injects the tracker automatically into
+  deployed pages, so don't go looking for a `<script>` to maintain.
+- Hobby-plan limits: 30 days of viewable history, 50,000 events/month,
+  no custom events (those are Pro features).
+- As of 2026-10-16, the trailing 30 days showed **1 visitor / 1 page view**
+  (Germany, Mac desktop — almost certainly Amith himself). The site works
+  but has effectively no outside traffic; the levers are discoverability,
+  not code: link it from LinkedIn/GitHub/resume, consider a custom domain
+  and SEO/meta tags.
+- Dashboard: Vercel → `amith-rajolkar-s-projects` → `pashyamisoul-site`
+  → Analytics.
+
+## Title wording (2026-11-10)
+
+The job title on the site is **"IT Engineer" / "Senior IT Engineer"** —
+never "IT Support Engineer". Renamed site-wide in commit `6d1fd22`
+(hero eyebrow, experience-card role, and about paragraph in
+`portfolio.html`; `index.html` already used "IT Engineer"). The untracked
+`mockups/ghibli-portfolio.html` was fixed locally too, and the resume PDF
+was checked — it contains no "Support Engineer". Keep new copy consistent
+with this.
+
 ## Local development
 
 No tooling required. Serve statically from the repo root, e.g.:
@@ -81,7 +106,10 @@ python3 -m http.server 8787
 
 - `index.html` (bio page) has the favicon but no visible logo — the mark
   could be added above the name if wanted.
-- `mockups/` (design explorations) and `.DS_Store` files are untracked;
-  consider a `.gitignore` for `.DS_Store`.
+- `mockups/` (design explorations), `.claude/` (local launch config) and
+  `.DS_Store` files are untracked — deliberately, per Amith (2026-07-23);
+  don't commit them. A `.gitignore` for `.DS_Store` would still be tidy.
+- Traffic is near zero (see Analytics section); discoverability work
+  (profile links, custom domain, SEO meta tags) is the open lever.
 - `README.md` describes the project history; this file is the operational
   handover.
