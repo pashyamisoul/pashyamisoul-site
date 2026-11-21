@@ -102,6 +102,8 @@ between Education and Contact, plus a "Projects" nav link. Three cards:
 | Shivani & Aniruddh (wedding site) | https://shivani-aniruddh-wedding.vercel.app | private |
 | Akshay & Aishwarya (wedding site) | https://akshayaishwaryawedding.vercel.app | private |
 | TailorBack (ATS resume/cover-letter builder) | https://tailorback.com | github.com/pashyamisoul/tailorback |
+| FirstLink (laptop store, Bengaluru) | https://firstlink.in | github.com/pashyamisoul/firstlink-website |
+| Srimanasa (financial services rebuild) | https://srimanasa.in | github.com/pashyamisoul/srimanasa-rebuild |
 
 Implementation notes:
 
