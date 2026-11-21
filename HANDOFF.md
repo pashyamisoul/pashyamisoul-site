@@ -122,7 +122,19 @@ Implementation notes:
 - Adding a sixth nav link made the menu overlap the logo at tablet
   widths; a media query (769px to 1120px) tightens nav padding and lets
   the links wrap. Keep it in mind if more nav items are added.
-- Relevant commits: `57d1e12` (section), `a3e316b` (TailorBack live link).
+- BudgetBuddy (added 2026-11-21) is an iOS app, not a website, so its
+  card has no links; a muted `.project-note` span ("Personal Build")
+  fills the links row to keep card bottoms aligned. The repo stays
+  private by Amith's decision: it may expose the Apps Script write
+  endpoint for his personal Google Sheet, so do not make it public or
+  add a GitHub link without checking that first.
+- The grid is capped at three columns (`minmax(300px, 1fr)`, max-width
+  1240px) so six cards sit as 3+3 on wide screens. An earlier full-width
+  five-column layout left one card orphaned once the sixth was added;
+  if cards are added or removed, re-check the wrap on a wide viewport.
+- Relevant commits: `57d1e12` (section), `a3e316b` (TailorBack live
+  link), `d1e1307` (Srimanasa demo link), `64c8582` (five-across grid,
+  superseded), `48403e5` (BudgetBuddy card and three-column grid).
 
 ## Copy style rule
 
